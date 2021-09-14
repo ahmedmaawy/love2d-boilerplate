@@ -1,2 +1,34 @@
-# love2d-boilerplate
-Boilerplate code for a Love2D Game
+# Love2D Boilerplate
+Boilerplate for a Love2D Empty Game.
+
+# Libraries included by default
+* [anim8](https://github.com/kikito/anim8) - Spritesheet animation library.
+* [class](https://github.com/jonstoler/class.lua) - Class management.
+* [hump](https://github.com/vrld/hump) - Various Love2D helper classes.
+* [windfield](https://github.com/a327ex/windfield) - Game Physics Automation Library for Love2D.
+* [Simple-Tiled-Implementation](https://github.com/karai17/Simple-Tiled-Implementation) - Tiled Map integration to Love2D.
+
+# Also includes
+* State Machine Management.
+* Central Dependencies Management.
+* Aspect Ratio management.
+
+# Random notes
+## Managing Aspect Ratio
+* This is already auto managed. Make reference to `BaseState.lua` and `main.lua`
+
+## Automatic Graphics Off-setting with Aspect Ratio
+```lua
+-- The example below only deals with centering according to the width of display
+-- You can also do something simmilar for the height
+
+function love.draw()
+    if windowWidth > (minWidth * aspect_ratio.scale) then
+        local diff = windowWidth - (minWidth * aspect_ratio.scale)
+        love.graphics.translate(diff / 2, 0)
+    end
+
+    -- Implement scale
+    love.graphics.scale(aspect_ratio.scale, aspect_ratio.scale)
+end
+```
