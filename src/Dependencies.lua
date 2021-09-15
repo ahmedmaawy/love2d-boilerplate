@@ -4,6 +4,7 @@ anim8 = require 'libraries/anim8/anim8'
 sti = require 'libraries/Simple-Tiled-Implementation/sti'
 Camera = require 'libraries/hump/camera'
 aspect_ratio = require 'libraries/AspectRatio'
+wf = require 'libraries/windfield/windfield'
 
 -- Utils
 require 'src/StateMachine'
