@@ -19,14 +19,21 @@ Boilerplate for a Love2D Empty Game.
 
 ## Automatic Graphics Off-setting with Aspect Ratio
 ```lua
--- The example below only deals with centering according to the width of display
--- You can also do something simmilar for the height
-
 function love.draw()
+    -- Offset measurement
+    local xDiff = 0
+    local yDiff = 0
+
+    -- Center window graphics
     if windowWidth > (minWidth * aspect_ratio.scale) then
-        local diff = windowWidth - (minWidth * aspect_ratio.scale)
-        love.graphics.translate(diff / 2, 0)
+        xDiff = windowWidth - (minWidth * aspect_ratio.scale)
     end
+
+    if windowHeight > (minHeight * aspect_ratio.scale) then
+        yDiff = windowHeight - (minHeight * aspect_ratio.scale)
+    end
+
+    love.graphics.translate(xDiff / 2, yDiff / 2)
 
     -- Implement scale
     love.graphics.scale(aspect_ratio.scale, aspect_ratio.scale)
