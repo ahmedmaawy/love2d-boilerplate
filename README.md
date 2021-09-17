@@ -6,7 +6,8 @@ Boilerplate for a Love2D Empty Game.
 * [class](https://github.com/jonstoler/class.lua) - Class management.
 * [hump](https://github.com/vrld/hump) - Various Love2D helper classes.
 * [windfield](https://github.com/a327ex/windfield) - Game Physics Automation Library for Love2D.
-* [Simple-Tiled-Implementation](https://github.com/karai17/Simple-Tiled-Implementation) - Tiled Map integration to Love2D.
+* [Simple-Tiled-Implementation](https://github.com/karai17/Simple-Tiled-Implementation) - Tiled Map
+* [tween](https://github.com/kikito/tween.lua) - Tween functions for lua.
 
 # Also includes
 * State Machine Management.
