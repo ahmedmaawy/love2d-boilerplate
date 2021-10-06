@@ -3,9 +3,10 @@ require 'src/Dependencies'
 
 -- Loader
 function love.load()
-    -- Window sizing
-    minWidth = 350
-    minHeight = 200
+    -- Window sizing. This is normally recommended resolution for Mobile Games
+    -- You can also use 854 x 480
+    minWidth = 960
+    minHeight = 640
 
     windowScaling = 1
 
