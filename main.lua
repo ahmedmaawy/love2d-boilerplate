@@ -5,27 +5,17 @@ require 'src/Dependencies'
 function love.load()
     -- Window sizing. This is normally recommended resolution for Mobile Games
     -- You can also use 854 x 480
-    minWidth = 960
-    minHeight = 640
-
-    windowScaling = 1
-
-    windowWidth = minWidth * windowScaling
-    windowHeight = minHeight * windowScaling
-
+    gameWidth = 960
+    gameHeight = 640
+    
     paused = false
-
-    -- Window display options
-    love.window.setMode(
-        windowWidth,
-        windowHeight,
-        {resizable=true, vsync=false, minwidth=minWidth, minheight=minHeight}
-    )
+    
     love.window.setTitle("Game Title")
 
-    local w, h = love.graphics.getDimensions()
-    aspect_ratio:init(windowWidth, windowHeight, minWidth, minHeight) -- 320, 240 is the native resolution
-
+    -- Make use of push librarye to manage screen sizing and resizing
+    local windowWidth, windowHeight = love.graphics.getDimensions()
+    push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {fullscreen = false, resizable = true, pixelperfect=true})
+    
     -- Setup the state machine
     gStateMachine = StateMachine {
         ['start'] = function() return StartState() end,
@@ -39,9 +29,8 @@ end
 
 -- When the window is resized
 function love.resize(w, h)
-    gStateMachine:resize(w, h)
-    windowWidth = w
-    windowHeight = h
+    -- Resize using push
+    return push:resize(w, h)
 end
 
 -- Update loop
@@ -53,5 +42,7 @@ end
 
 -- Draw loop
 function love.draw()
+    push:start()
     gStateMachine:render()
+    push:finish()
 end
