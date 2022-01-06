@@ -9,6 +9,7 @@ Boilerplate for a Love2D Empty Game.
 * [windfield](https://github.com/a327ex/windfield) - Game Physics Automation Library for Love2D.
 * [Simple-Tiled-Implementation](https://github.com/karai17/Simple-Tiled-Implementation) - Tiled Map
 * [tween](https://github.com/kikito/tween.lua) - Tween functions for lua.
+* [require](https://github.com/premek/require.lua) - Extends require with some methods.
 
 # Also includes
 * State Machine Management.

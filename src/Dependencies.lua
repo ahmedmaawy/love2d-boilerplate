@@ -7,6 +7,9 @@ Camera = require 'libraries/hump/camera'
 wf = require 'libraries/windfield/windfield'
 name = require 'libraries/tween'
 
+-- Used to require whole folders
+require 'libraries/require'
+
 -- Utils
 require 'src/StateMachine'
 
