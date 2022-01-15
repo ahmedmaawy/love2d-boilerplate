@@ -5,7 +5,7 @@ anim8 = require 'libraries/anim8/anim8'
 sti = require 'libraries/Simple-Tiled-Implementation/sti'
 Camera = require 'libraries/hump/camera'
 wf = require 'libraries/windfield/windfield'
-name = require 'libraries/tween'
+tween = require 'libraries/tween'
 
 -- Used to require whole folders
 require 'libraries/require'
