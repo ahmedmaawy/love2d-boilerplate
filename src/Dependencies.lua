@@ -13,7 +13,8 @@ require 'libraries/require'
 -- Utils
 require 'src/StateMachine'
 
--- States
-require 'src/states/BaseState'
-require 'src/states/StartState'
-require 'src/states/GameState'
+-- Include base classes
+gameBaseClasses = require.tree('src.base')
+
+-- Include states
+gameStates = require.tree('src.states')
